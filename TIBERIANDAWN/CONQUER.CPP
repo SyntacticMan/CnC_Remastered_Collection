@@ -58,17 +58,17 @@
  *   Validate_Error -- prints an error message when an object fails validation                 *
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
-#include	"function.h"
+#include  "function.h"
 #include  "tcpip.h"
-#include	<stdlib.h>
-#include	<stdio.h>
-#include	<string.h>
-#include	<direct.h>
-#include	<fcntl.h>
-#include	<io.h>
-#include	<dos.h>
-#include	<share.h>
-#include <malloc.h>
+#include   <stdlib.h>
+#include   <stdio.h>
+#include   <string.h>
+#include   <direct.h>
+#include   <fcntl.h>
+#include   <io.h>
+#include   <dos.h>
+#include   <share.h>
+#include   <malloc.h>
 #include  "ccdde.h"
 
 #define SHAPE_TRANS		0x40
@@ -433,7 +433,7 @@ void Keyboard_Process(KeyNumType &input)
 	int index;
 
 	/*
-	**	Don't do anything if there is not keyboard event.
+	**	Don't do anything if there is no keyboard event.
 	*/
 	if (input == KN_NONE) {
 		return;
@@ -502,7 +502,7 @@ void Keyboard_Process(KeyNumType &input)
 	}
 
 	/*
-	**	Process prerecorded team selection. This will be an addative select
+	**	Process prerecorded team selection. This will be an additive select
 	**	if the SHIFT key is held down. It will create the team if the
 	**	CTRL or ALT key is held down.
 	*/
@@ -730,13 +730,13 @@ void Keyboard_Process(KeyNumType &input)
  * Message_Input -- allows inter-player message input processing                               *
  *                                                                                             *
  * INPUT:                                                                                      *
- *		input		key value																							 *
+ *		input		key value																   *
  *                                                                                             *
  * OUTPUT:                                                                                     *
- *		none.																												 *
+ *		none.																			       *
  *                                                                                             *
  * WARNINGS:                                                                                   *
- *		MAX_MESSAGE_LENGTH has increased over the DOS version. COMPAT_MESSAGE_LENGTH reflects   *                                                                                             *
+ *		MAX_MESSAGE_LENGTH has increased over the DOS version. COMPAT_MESSAGE_LENGTH reflects  *
  *  the length of the DOS message and also the length of the message in the packet header.     *
  *  To allow transmission of longer messages I split the message into COMPAT_MESSAGE_LENGTH-4  *
  *  sized chunks and use the extra space after the zero terminator to specify which segment    *
@@ -1300,21 +1300,21 @@ SourceType Source_From_Name(char const *name)
 }
 
 
-/***********************************************************************************************
+/**************************************************************************************************
  * Name_From_Source -- retrieves the name for the given SourceType         						  *
  *                                                                         						  *
  * INPUT:                                                                  						  *
- *		source		SourceType to get the name for															  *
+ *		source		SourceType to get the name for												  *
  *                                                                         						  *
  * OUTPUT:                                                                 						  *
- *		name of SourceType																							  *
+ *		name of SourceType																		  *
  *                                                                         						  *
  * WARNINGS:                                                               						  *
- *		none.																												  *
+ *		none.																					  *
  *                                                                         						  *
  * HISTORY:                                                                						  *
  *   11/15/1994 BR : Created.                                              						  *
- *=============================================================================================*/
+ *================================================================================================*/
 char const *Name_From_Source(SourceType source)
 {
 	if ((unsigned)source < SOURCE_COUNT) {

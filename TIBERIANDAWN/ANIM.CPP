@@ -49,7 +49,7 @@
  *   AnimClass::delete -- Returns an anim object back to the free pool.                        *
  *   AnimClass::new -- Allocates an anim object from the pool.                                 *
  *   AnimClass::~AnimClass -- Destructor for anim objects.                                     *
- *   AnimClass::Validate -- validates anim pointer															  *
+ *   AnimClass::Validate -- validates anim pointer											   *
  *   Shorten_Attached_Anims -- Reduces attached animation durations.                           *
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
@@ -63,16 +63,16 @@ void * AnimClass::VTable;
 
 
 /***********************************************************************************************
- * AnimClass::Validate -- validates anim pointer															  *
+ * AnimClass::Validate -- validates anim pointer											   *
  *                                                                                             *
  * INPUT:                                                                                      *
- *		none.																												  *
+ *		none.																				   *
  *                                                                                             *
  * OUTPUT:                                                                                     *
- *		1 = ok, 0 = error																								  *
+ *		1 = ok, 0 = error																	   *
  *                                                                                             *
  * WARNINGS:                                                                                   *
- *		none.																												  *
+ *		none.																				   *
  *                                                                                             *
  * HISTORY:                                                                                    *
  *   08/09/1995 BRR : Created.                                                                 *

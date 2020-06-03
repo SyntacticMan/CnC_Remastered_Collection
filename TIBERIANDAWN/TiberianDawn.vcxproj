@@ -9,6 +9,10 @@
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="TiberianDawn|Win32">
+      <Configuration>TiberianDawn</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{1380ED08-82A3-49C2-A171-1915574B3382}</ProjectGuid>
@@ -34,6 +38,13 @@
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='TiberianDawn|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
@@ -44,6 +55,9 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='TiberianDawn|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -52,6 +66,11 @@
     <TargetName>$(ProjectName)I</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\$(PlatformName)\</OutDir>
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='TiberianDawn|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\bin\$(PlatformName)\</OutDir>
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
@@ -121,19 +140,57 @@
       </Command>
     </PreLinkEvent>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='TiberianDawn|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>TRUE_FALSE_DEFINED;WIN32;NDEBUG;_WINDOWS;_USRDLL;TIBERIANDAWN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./win32lib</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4800;4244;4996</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>winmm.lib;Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>false</DataExecutionPrevention>
+    </Link>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <MASM Include="win32lib\TOBUFF.ASM" />
     <MASM Include="win32lib\XORDELTA.ASM">
       <EnableMASM51Compatibility Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EnableMASM51Compatibility>
       <PreserveIdentifierCase Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">1</PreserveIdentifierCase>
       <EnableMASM51Compatibility Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableMASM51Compatibility>
+      <EnableMASM51Compatibility Condition="'$(Configuration)|$(Platform)'=='TiberianDawn|Win32'">true</EnableMASM51Compatibility>
       <PreserveIdentifierCase Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</PreserveIdentifierCase>
+      <PreserveIdentifierCase Condition="'$(Configuration)|$(Platform)'=='TiberianDawn|Win32'">1</PreserveIdentifierCase>
     </MASM>
     <None Include="COORDA.ASM" />
     <MASM Include="KEYFBUFF.ASM">
       <FileType>Document</FileType>
       <EnableMASM51Compatibility Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableMASM51Compatibility>
+      <EnableMASM51Compatibility Condition="'$(Configuration)|$(Platform)'=='TiberianDawn|Win32'">true</EnableMASM51Compatibility>
       <PreserveIdentifierCase Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</PreserveIdentifierCase>
+      <PreserveIdentifierCase Condition="'$(Configuration)|$(Platform)'=='TiberianDawn|Win32'">1</PreserveIdentifierCase>
       <PreserveIdentifierCase Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">1</PreserveIdentifierCase>
       <EnableMASM51Compatibility Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EnableMASM51Compatibility>
     </MASM>
@@ -147,14 +204,17 @@
       <FileType>Document</FileType>
       <PreserveIdentifierCase Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">1</PreserveIdentifierCase>
       <PreserveIdentifierCase Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">1</PreserveIdentifierCase>
+      <PreserveIdentifierCase Condition="'$(Configuration)|$(Platform)'=='TiberianDawn|Win32'">1</PreserveIdentifierCase>
       <EnableMASM51Compatibility Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EnableMASM51Compatibility>
       <EnableMASM51Compatibility Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableMASM51Compatibility>
+      <EnableMASM51Compatibility Condition="'$(Configuration)|$(Platform)'=='TiberianDawn|Win32'">true</EnableMASM51Compatibility>
     </MASM>
     <None Include="win32lib\DIFFTB.INC" />
     <None Include="win32lib\DRAWBUFF.INC" />
     <MASM Include="win32lib\FACINGFF.ASM">
       <FileType>Document</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='TiberianDawn|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </MASM>
     <None Include="win32lib\GBUFFER.INC" />
@@ -365,6 +425,7 @@
     <ClCompile Include="AIRCRAFT.CPP" />
     <ClCompile Include="ALLOC.CPP">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='TiberianDawn|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="ANIM.CPP" />
