@@ -116,14 +116,14 @@
 #ifndef PARM_PLAYTEST
 #define	PARM_PLAYTEST		0xF7DDC227		// "PLAYTEST"
 #endif
-#define	PARM_CHEATDAVID	0xBE79088C		// Cheat keys for David Dettmer
+#define	PARM_CHEATDAVID		0xBE79088C		// Cheat keys for David Dettmer
 #define	PARM_CHEATERIK		0x9F38A19D		// Cheat keys for Erik Yeo
-#define	PARM_EDITORERIK	0xC2AA509B		//	Map editor for Erik Yeo
+#define	PARM_EDITORERIK		0xC2AA509B		//	Map editor for Erik Yeo
 #define	PARM_CHEATPHIL		0x39D01821		// Cheat keys for Phil Gorrow
 #define	PARM_CHEATJOE		0xABDD0362		// Cheat keys for Joe Bostic
 #define	PARM_CHEATBILL		0xB5B63531		// Cheat keys for Bill Randolph
 #define	PARM_CHEAT_STEVET	0x2E7FE493		// Cheat keys for Steve Tall
-#define	PARM_EDITORBILL	0x7E7C4CCA		//	"-EDITOR"
+#define	PARM_EDITORBILL		0x7E7C4CCA		//	"-EDITOR"
 #define	PARM_CHEATMIKE		0x00532693		// Mike Lightner
 #define	PARM_CHEATADAM		0xDFABC23A		// Adam Isgreen
 #endif
@@ -139,21 +139,21 @@
 #define	PARM_3POINT			0x03552894		// Enable three point turns.
 #define	PARM_SCORE			0x7FDE2C33		// Enables alternate themes.
 #define	PARM_COMBAT			0xDC57C4B2		// Gives combat advantage to attacker.
-#define	PARM_TREETARGET	0x00AB6BEF		// Allows targeting of trees without <CTRL> key.
-#define	PARM_BIB				0xF7867BF0		// Disables building bibs.
-#define	PARM_MCV				0x104DF10F		// MCV undeploys rather than sells.
+#define	PARM_TREETARGET		0x00AB6BEF		// Allows targeting of trees without <CTRL> key.
+#define	PARM_BIB			0xF7867BF0		// Disables building bibs.
+#define	PARM_MCV			0x104DF10F		// MCV undeploys rather than sells.
 #define	PARM_HELIPAD		0x53EBECBC		// Helipad can be purchased separately from helicopter.
 #define	PARM_IQ				0x9E3881B8		// Smart self defense logic enable.
 #define	PARM_SQUISH			0x4EA2FBDF		// Squish images for infantry bodies.
 #define	PARM_HUMAN			0xACB58F61		// Human generated sound effects.
 #define	PARM_SCROLLING		0xC084AE82		// Restricts scrolling over the tabs.
-//#define	PARM_SPECIAL		0xD18129F6		// Enables special mode.
+//#define	PARM_SPECIAL	0xD18129F6		// Enables special mode.
 //#define	PARM_SPECIAL	0x2E84E394	//	#1
 //#define	PARM_SPECIAL	0x63CE7584	//	#2
 //#define	PARM_SPECIAL	0x85F110A5	//	#3
 ///#define	PARM_SPECIAL	0x7F65F13C	//	#4
 //#define	PARM_SPECIAL	0x431F5F61	//	#5
-#define	PARM_SPECIAL	0x11CA05BB	//	#6 	funpark
+#define		PARM_SPECIAL		0x11CA05BB	//	#6 	funpark
 //#define	PARM_SPECIAL	0xE0F651B9	//	#7
 //#define	PARM_SPECIAL	0x10B9683D	//	#8
 //#define	PARM_SPECIAL	0xEE1CD37D	//	#9
@@ -1640,7 +1640,7 @@ typedef enum RadioMessageType : unsigned char {
 **	have a lepton resolution.
 */
 typedef unsigned long	COORDINATE;
-typedef signed short		CELL;
+typedef signed short	CELL;
 
 typedef unsigned short	TARGET;
 #define	TARGET_NONE 	((TARGET)0)

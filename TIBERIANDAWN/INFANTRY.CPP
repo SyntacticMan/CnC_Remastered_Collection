@@ -101,10 +101,10 @@ DoStruct const InfantryClass::MasterDoControls[DO_COUNT] = {
 	{true,	false,	false,	0},	// DO_STAND_READY
 	{true,	false,	false,	0},	// DO_STAND_GUARD
 	{true,	false,	false,	0},	// DO_PRONE
-	{true,	true,		true,		2},	// DO_WALK
+	{true,	true,	true,	2},	// DO_WALK
 	{true,	false,	false,	1},	// DO_FIRE_WEAPON
-	{false,	true,		false,	2},	// DO_LIE_DOWN
-	{true,	true,		true,		2},	// DO_CRAWL
+	{false,	true,	false,	2},	// DO_LIE_DOWN
+	{true,	true,	true,	2},	// DO_CRAWL
 	{false,	false,	false,	3},	// DO_GET_UP
 	{true,	false,	false,	1},	// DO_FIRE_PRONE
 	{true,	false,	false,	2},	// DO_IDLE1
@@ -136,16 +136,16 @@ DoStruct const InfantryClass::MasterDoControls[DO_COUNT] = {
 
 
 /***********************************************************************************************
- * InfantryClass::Validate -- validates infantry pointer.												  *
+ * InfantryClass::Validate -- validates infantry pointer.									   *
  *                                                                                             *
  * INPUT:                                                                                      *
- *		none.																												  *
+ *		none.																		 		   *
  *                                                                                             *
  * OUTPUT:                                                                                     *
- *		1 = ok, 0 = error																								  *
+ *		1 = ok, 0 = error																 	   *
  *                                                                                             *
  * WARNINGS:                                                                                   *
- *		none.																												  *
+ *		none.																				   *
  *                                                                                             *
  * HISTORY:                                                                                    *
  *   08/09/1995 BRR : Created.                                                                 *

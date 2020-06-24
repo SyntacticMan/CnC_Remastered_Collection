@@ -128,7 +128,7 @@ int Modify_Damage(int damage, WarheadType warhead, ArmorType armor, int distance
  *=============================================================================================*/
 void Explosion_Damage(COORDINATE coord, unsigned strength, TechnoClass * source, WarheadType warhead)
 {
-	CELL				cell;			// Cell number under explosion.
+	CELL			cell;			// Cell number under explosion.
 	ObjectClass *	object;			// Working object pointer.
 	ObjectClass *	objects[32];	// Maximum number of objects that can be damaged.
 	int				distance;	// Distance to unit.

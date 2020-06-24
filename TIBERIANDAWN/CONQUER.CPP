@@ -31,7 +31,7 @@
  *   CC_Draw_Shape -- Custom draw shape handler.                                               *
  *   Call_Back -- Main game maintenance callback routine.                                      *
  *   Color_Cycle -- Handle the general palette color cycling.                                  *
- *   Disk_Space_Available -- returns bytes of free disk space              						  *
+ *   Disk_Space_Available -- returns bytes of free disk space              					   *
  *   Do_Record_Playback -- handles saving/loading map pos & current object                     *
  *   Fading_Table_Name -- Builds a theater specific fading table name.                         *
  *   Fetch_Techno_Type -- Convert type and ID into TechnoTypeClass pointer.                    *
